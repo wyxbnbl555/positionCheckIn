@@ -1,0 +1,28 @@
+spring.application.name : attendance-management
+server.port : 80
+spring.datasource.driver-class-name : com.mysql.cj.jdbc.Driver
+spring.datasource.url : jdbc:mysql://localhost:3306/attendacemanagement
+#连接数据库的用户名
+spring.datasource.username : root
+#密码
+spring.datasource.password : Wyx20030921
+#配置mybatis的日志, 指定输出到控制台
+mybatis.configuration.log-impl : org.apache.ibatis.logging.stdout.StdOutImpl
+
+#开启mybatis的驼峰命名自动映射开关 a_column ------> aCloumn
+mybatis.configuration.map-underscore-to-camel-case : true
+
+spring:
+  profiles:
+    active: dev
+sky:
+  jwt:
+    # 配置用户端令牌
+    user-secret-key: itcast
+    user-ttl: 7200000
+    user-token-name: authentication
+
+  # 微信相关配置
+  wechat:
+    appid: ${sky.wechat.appid}
+    secret: ${sky.wechat.secret}
